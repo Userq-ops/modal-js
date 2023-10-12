@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .back {
+            border: 1px solid black;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Расчет зарплат, я использовал window.alert для того, чтобы вывести результаты в модальное окно. 
+        // Так же я пробовал с помощью просто alert, но ничего не получалось
+        var salary = prompt("Введите вашу зарплату:");
+var bonus = salary * 0.15;
+var taxes = (salary + bonus) * 0.1;
+var expenses = 190;
+var remaining = (salary + bonus - taxes - expenses) / 2;
+
+var resultMessage =
+  "Ваша зарплата: " + salary + "\n" +
+  "Ваша премия: " + bonus + "\n" +
+  "Ваши налоги: " + taxes + "\n" +
+  "Ваши траты: " + expenses + "\n" +
+  "Ваша оставшаяся сумма: " + remaining;
+
+window.alert(resultMessage);
+
+
+
+
+
+// Придумайте число
+var secretNumber = 2 * prompt("Задумайте число и умножьте его на 2, затем прибавьте 7. Введите результат:") + 7;
+var userNumber = prompt("Введите число, которое вы загадали:");
+if (userNumber == secretNumber) {
+  window.alert("Вы угадали!");
+} else {
+  window.alert("Вы не угадали. Загаданное число было " + secretNumber);
+}
+
+
+
+
+// Имя и Фамилия 3х студентов
+var names = prompt("Введите имя первого студента:");
+var surnames = prompt("Введите фамилию первого студента:");
+var names2 = prompt("Введите имя второго студента:");
+var surnames2 = prompt("Введите фамилию второго студента:");
+var names3 = prompt("Введите имя третьего студента:");
+var surnames3 = prompt("Введите фамилию третьего студента:");
+
+var studentsMessage =
+  "Студенты:\n" +
+  names + " " + surnames + "\n" +
+  names2 + " " + surnames2 + "\n" +
+  names3 + " " + surnames3;
+
+window.alert(studentsMessage);
+</script>
+
+
+
+<!-- Калькулитор -->
+<div class="back">
+<div class="calculator">
+  <div class="input-container">
+    <input style="width: 80px;" type="text" id="first-number" placeholder="1st number">
+    <input style="width: 80px;" type="text" id="second-number" placeholder="2nd number">
+</div> 
+  <div class="buttons">
+    <button id="multiply">*</button>
+    <button id="divide">/</button>
+  </div>
+  <div class="result-container">
+    <span id="result">The Result Is:</span>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Скрипт калькулитора ниже этого текста -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const firstNumberInput = document.getElementById("first-number");
+    const secondNumberInput = document.getElementById("second-number");
+    const multiplyButton = document.getElementById("multiply");
+    const divideButton = document.getElementById("divide");
+    const resultSpan = document.getElementById("result");
+
+    multiplyButton.addEventListener("click", function () {
+      const firstNumber = parseFloat(firstNumberInput.value);
+      const secondNumber = parseFloat(secondNumberInput.value);
+
+      if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+        const result = firstNumber * secondNumber;
+        resultSpan.textContent = "The Result Is: " + result;
+      } else {
+        resultSpan.textContent = "Please enter valid numbers.";
+      }
+    });
+
+    divideButton.addEventListener("click", function () {
+      const firstNumber = parseFloat(firstNumberInput.value);
+      const secondNumber = parseFloat(secondNumberInput.value);
+
+      if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+        if (secondNumber === 0) {
+          resultSpan.textContent = "Cannot divide by zero.";
+        } else {
+          const result = firstNumber / secondNumber;
+          resultSpan.textContent = "The Result Is: " + result;
+        }
+      } else {
+        resultSpan.textContent = "Please enter valid numbers.";
+      }
+    });
+  });
+</script>
+</body>
+</html>
