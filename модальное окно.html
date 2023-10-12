@@ -5,10 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .back {
-            border: 1px solid black;
-            width: 200px;
-        }
+        <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    div {
+        margin: 10px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input {
+        padding: 5px;
+        width: 100px;
+    }
+
+    button {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+</style>
+
     </style>
 </head>
 <body>
@@ -66,20 +95,20 @@ window.alert(studentsMessage);
 
 
 <!-- Калькулитор -->
-<div class="back">
-<div class="calculator">
-  <div class="input-container">
-    <input style="width: 80px;" type="text" id="first-number" placeholder="1st number">
-    <input style="width: 80px;" type="text" id="second-number" placeholder="2nd number">
-</div> 
-  <div class="buttons">
-    <button id="multiply">*</button>
-    <button id="divide">/</button>
-  </div>
-  <div class="result-container">
-    <span id="result">The Result Is:</span>
-  </div>
+<div>
+    <label for="first-number">1st number:</label>
+    <input type="text" id="first-number">
 </div>
+<div>
+    <label for="second-number">2nd number:</label>
+    <input type="text" id="second-number">
+</div>
+<div>
+    <button id="multiply">Умножить</button>
+    <button id="divide">Делить</button>
+</div>
+<div id="result">
+    The Result Is:
 </div>
 
 
